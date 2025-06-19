@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-blue-light: hsl(246, 80%, 60%);
+
+  --clr-orange: hsl(15, 100%, 70%); /* Work */
+  --clr-blue-soft: hsl(195, 74%, 62%); /* Play */
+  --clr-red-light: hsl(348, 100%, 68%); /* Study */
+  --clr-green-lime: hsl(145, 58%, 55%); /* Exercise */
+  --clr-purple: hsl(264, 64%, 52%); /* Social */
+  --clr-yellow: hsl(43, 84%, 65%); /* Self Care */
+
+  --clr-navy-darkest: hsl(226, 43%, 10%);
+  --clr-navy-dark: hsl(235, 46%, 20%);
+  --clr-navy-medium: hsl(235, 45%, 61%);
+  --clr-navy-light: hsl(236, 100%, 87%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff-rubik: "Rubik", sans-serif;
+}
+
+body {
+  font-family: var(--ff-rubik);
+  font-size: 1rem;
+  background-color: var(--clr-navy-darkest);
+  color: var(--clr-navy-light);
+  padding: 5.25rem 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 1.5rem;
+}
+
+.time-tracking-dashboard {
+  width: 100%;
+  max-width: 20.4375rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-card {
+  background-color: var(--clr-navy-dark);
+  border-radius: 0.9375rem;
+  overflow: hidden;
+}
+
+.profile-card__header {
+  background-color: var(--clr-blue-light);
+  border-radius: 0.9375rem;
+  padding: 2.1875rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-card__avatar {
+  width: 4.125rem;
+  height: 4.125rem;
+  border-radius: 50%;
+  border: 3px solid var(--clr-white);
+  object-fit: cover;
+}
+
+.profile-card__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card__report-for {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--clr-navy-light);
+  margin-bottom: 0.25rem;
+}
+
+.profile-card__name {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--clr-white);
+}
+
+.profile-card__time-frame-toggle {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+}
+
+.time-frame-btn {
+  font-family: var(--ff-rubik);
+  font-size: 1.125rem;
+  font-weight: 400;
+  background-color: transparent;
+  border: none;
+  color: var(--clr-navy-medium);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.time-frame-btn:hover,
+.time-frame-btn.active {
+  color: var(--clr-white);
+}
+
+.activity-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.activity-card {
+  border-radius: 0.9375rem;
+  position: relative;
+  overflow: hidden;
+  padding-top: 2.375rem;
+}
+
+.activity-card__icon-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2.5rem;
+  overflow: hidden;
+}
+
+.activity-card__icon {
+  position: absolute;
+  top: -0.625rem;
+  right: 1.1875rem;
+  width: 4.875rem;
+  height: auto;
+  z-index: 1;
+}
+
+.activity-card--work {
+  background-color: var(--clr-orange);
+}
+.activity-card--play {
+  background-color: var(--clr-blue-soft);
+}
+.activity-card--study {
+  background-color: var(--clr-red-light);
+}
+.activity-card--exercise {
+  background-color: var(--clr-green-lime);
+}
+.activity-card--social {
+  background-color: var(--clr-purple);
+}
+.activity-card--self-care {
+  background-color: var(--clr-yellow);
+}
+
+.activity-card__details {
+  background-color: var(--clr-navy-dark);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  gap: 0.5rem;
+  z-index: 2;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.activity-card__details:hover {
+  background-color: var(--clr-navy-medium);
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.activity-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.activity-card__category {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--clr-white);
+}
+
+.activity-card__ellipsis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity-card__time-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-card__current-time {
+  font-size: 2rem;
+  color: var(--clr-white);
+  font-weight: 300;
+}
+
+.activity-card__previous-time {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--clr-navy-light);
+}
+
+.attribution {
+  text-align: center;
+  font-size: 0.6875rem;
+  color: var(--clr-navy-light);
+}
+
+.attribution a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--clr-white);
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 64em) {
+  body {
+    padding: 2.5rem;
+    gap: 2.5rem;
+  }
+
+  .time-tracking-dashboard {
+    max-width: 69.375rem;
+    display: grid;
+    grid-template-columns: 255px 1fr;
+    grid-template-rows: auto;
+    gap: 1.875rem;
+  }
+
+  .profile-card {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .profile-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.1875rem 1.5rem 5.625rem;
+    gap: 1.5rem;
+  }
+
+  .profile-card__avatar {
+    width: 5.375rem;
+    height: 5.375rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-card__name {
+    font-size: 3rem;
+  }
+
+  .profile-card__time-frame-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  .time-frame-btn {
+    font-size: 1.125rem;
+    font-weight: 400;
+    padding: 0.25rem 0;
+  }
+
+  .activity-cards-grid {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.875rem;
+  }
+
+  .activity-card {
+    height: 16rem;
+    padding-top: 3rem;
+  }
+
+  .activity-card__icon-bg {
+    height: 3rem;
+  }
+
+  .activity-card__details {
+    height: 100%;
+    padding: 1.875rem;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .activity-card__header {
+    margin-bottom: 0;
+  }
+
+  .activity-card__time-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .activity-card__current-time {
+    font-size: 3.5rem;
+  }
+
+  .activity-card__previous-time {
+    font-size: 1rem;
+  }
+}

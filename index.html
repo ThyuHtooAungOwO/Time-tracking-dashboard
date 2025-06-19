@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="time-tracking-dashboard" role="region">
+      <!-- Profile Card Section -->
+      <section class="profile-card">
+        <div class="profile-card__header">
+          <img
+            src="./images/image-jeremy.png"
+            alt="Jeremy Robson"
+            class="profile-card__avatar"
+          />
+          <div class="profile-card__details">
+            <p class="profile-card__report-for">Report for</p>
+            <h1 class="profile-card__name">Jeremy Robson</h1>
+          </div>
+        </div>
+        <nav
+          class="profile-card__time-frame-toggle"
+          aria-label="Time Frame Selection"
+        >
+          <button type="button" class="time-frame-btn" data-time-frame="daily">
+            Daily
+          </button>
+          <button
+            type="button"
+            class="time-frame-btn active"
+            data-time-frame="weekly"
+          >
+            Weekly
+          </button>
+          <button
+            type="button"
+            class="time-frame-btn"
+            data-time-frame="monthly"
+          >
+            Monthly
+          </button>
+        </nav>
+      </section>
+
+      <!-- Activity Cards Grid -->
+      <div class="activity-cards-grid">
+        <!-- Activity Card: Work -->
+        <section class="activity-card activity-card--work" data-category="Work">
+          <div class="activity-card__icon-bg">
+            <img
+              src="./images/icon-work.svg"
+              alt="Work icon"
+              class="activity-card__icon"
+            />
+          </div>
+          <div class="activity-card__details">
+            <div class="activity-card__header">
+              <h2 class="activity-card__category">Work</h2>
+              <span class="activity-card__ellipsis" aria-hidden="true">
+                <img
+                  src="./images/icon-ellipsis.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+            </div>
+            <div class="activity-card__time-info">
+              <p class="activity-card__current-time">32hrs</p>
+              <p class="activity-card__previous-time">Last Week - 36hrs</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activity Card: Play -->
+        <section class="activity-card activity-card--play" data-category="Play">
+          <div class="activity-card__icon-bg">
+            <img
+              src="./images/icon-play.svg"
+              alt="Play icon"
+              class="activity-card__icon"
+            />
+          </div>
+          <div class="activity-card__details">
+            <div class="activity-card__header">
+              <h2 class="activity-card__category">Play</h2>
+              <span class="activity-card__ellipsis" aria-hidden="true">
+                <img
+                  src="./images/icon-ellipsis.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+            </div>
+            <div class="activity-card__time-info">
+              <p class="activity-card__current-time">10hrs</p>
+              <p class="activity-card__previous-time">Last Week - 8hrs</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activity Card: Study -->
+        <section
+          class="activity-card activity-card--study"
+          data-category="Study"
+        >
+          <div class="activity-card__icon-bg">
+            <img
+              src="./images/icon-study.svg"
+              alt="Study icon"
+              class="activity-card__icon"
+            />
+          </div>
+          <div class="activity-card__details">
+            <div class="activity-card__header">
+              <h2 class="activity-card__category">Study</h2>
+              <span class="activity-card__ellipsis" aria-hidden="true">
+                <img
+                  src="./images/icon-ellipsis.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+            </div>
+            <div class="activity-card__time-info">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 7hrs</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activity Card: Exercise -->
+        <section
+          class="activity-card activity-card--exercise"
+          data-category="Exercise"
+        >
+          <div class="activity-card__icon-bg">
+            <img
+              src="./images/icon-exercise.svg"
+              alt="Exercise icon"
+              class="activity-card__icon"
+            />
+          </div>
+          <div class="activity-card__details">
+            <div class="activity-card__header">
+              <h2 class="activity-card__category">Exercise</h2>
+              <span class="activity-card__ellipsis" aria-hidden="true">
+                <img
+                  src="./images/icon-ellipsis.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+            </div>
+            <div class="activity-card__time-info">
+              <p class="activity-card__current-time">4hrs</p>
+              <p class="activity-card__previous-time">Last Week - 5hrs</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activity Card: Social -->
+        <section
+          class="activity-card activity-card--social"
+          data-category="Social"
+        >
+          <div class="activity-card__icon-bg">
+            <img
+              src="./images/icon-social.svg"
+              alt="Social icon"
+              class="activity-card__icon"
+            />
+          </div>
+          <div class="activity-card__details">
+            <div class="activity-card__header">
+              <h2 class="activity-card__category">Social</h2>
+              <span class="activity-card__ellipsis" aria-hidden="true">
+                <img
+                  src="./images/icon-ellipsis.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+            </div>
+            <div class="activity-card__time-info">
+              <p class="activity-card__current-time">5hrs</p>
+              <p class="activity-card__previous-time">Last Week - 10hrs</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Activity Card: Self Care -->
+        <section
+          class="activity-card activity-card--self-care"
+          data-category="Self Care"
+        >
+          <div class="activity-card__icon-bg">
+            <img
+              src="./images/icon-self-care.svg"
+              alt="Self Care icon"
+              class="activity-card__icon"
+            />
+          </div>
+          <div class="activity-card__details">
+            <div class="activity-card__header">
+              <h2 class="activity-card__category">Self Care</h2>
+              <span class="activity-card__ellipsis" aria-hidden="true">
+                <img
+                  src="./images/icon-ellipsis.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </span>
+            </div>
+            <div class="activity-card__time-info">
+              <p class="activity-card__current-time">2hrs</p>
+              <p class="activity-card__previous-time">Last Week - 2hrs</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">PoungMont</a>.
+    </footer>
+  </body>
+</html>
